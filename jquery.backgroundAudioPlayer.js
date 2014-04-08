@@ -31,12 +31,14 @@
             snd = new Audio('');
 
             if ($.inArray(fileExtension, extensions) !== -1) {
-                if (snd.canPlayType('audio/' + fileExtension)) {
+                if (snd.canPlayType('audio/' + fileExtension + '')) {
                     snd = new Audio(sound);
+
                     snd.play();
+                    console.log(snd);
 
                     if (config.stop === true) {
-                        snd.stop();
+                        console.log(snd.stop());
                     }
                     
                 } else {
